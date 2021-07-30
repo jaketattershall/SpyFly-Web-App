@@ -1,0 +1,40 @@
+﻿{% extends "base.html" %}
+
+{% block content %}
+<h3 class="title">
+    Display
+</h3>
+
+<form method="POST" action="/display">
+<div class="button is-outlined">
+    <input class="button" type="submit" value="Call History" name="displayButton" />
+    <input class="button" type="submit" value="SMS History" name="displayButton" />
+    <input class="button" type="submit" value="Web History" name="displayButton" />
+    <input class="button" type="submit" value="Location Tracking" name="displayButton" />
+</div>
+</form>
+
+<div class="table-container">
+    <table class="table table-dark">
+        <thead>
+            {% for column in columns %}          
+                <th>{{ column }}</th>
+            {% endfor %}
+        </thead>
+        <thead></thead>
+        <tbody>
+            {% for row in data %}
+            <tr>
+                {%- for cell in row %}
+
+                <td>{{ cell }}</td>
+
+                {%- endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+
+{% endblock %}

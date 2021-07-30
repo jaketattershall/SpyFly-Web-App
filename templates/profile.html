@@ -1,0 +1,12 @@
+﻿{% extends "base.html" %}
+
+{% block content %}
+<h1 class="title">
+    Welcome, {{ username}}!
+</h1>
+<form method="POST" action="/profile">
+    <button class="button is-block is-info is-large is-fullwidth">View Data</button>
+
+</form>
+
+{% endblock %}
